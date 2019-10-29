@@ -1,0 +1,13 @@
+$color-white: #FFF;
+$color-light-gray: #f8f9f9;
+$color-gray: #d8d8d8;
+$color-black: #141414;
+$color-green: #10c9c3;
+
+@mixin flex($d, $j, $a, $f) {
+    display: $d;
+    justify-content: $j;
+    align-items: $a;
+    flex-direction: $f;
+}
+
