@@ -11,3 +11,21 @@ $color-green: #10c9c3;
     flex-direction: $f;
 }
 
+$colors:(
+    'white': $color-white,
+    'light-gray': $color-light-gray,
+    'gray': $color-gray,
+    'black': $color-black,
+    'green': $color-green
+);
+
+@each $key, $color in $colors {
+    .bgc-#{$key} {
+        background-color: $color;
+    }
+}
+
+//gambiarra
+.no-p {
+    padding: 0 !important;
+}
