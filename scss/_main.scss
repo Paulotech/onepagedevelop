@@ -122,23 +122,110 @@
         // border: 1px solid #000;
         height: 300px;
         overflow: hidden;
+        position: relative;
+        z-index: 1;
         a {
             text-decoration: none;
-            img {     
-                // width: 100%;
-                height: 100%;
-                position: relative;
+            // img {     
+            //     // width: 100%;
+            //     height: 100%;
+            // }
+        }
+        transition: 1s;
+        .box-opacity {
+            transition: 1s;
+            @include flex(flex, center, center, row);
+            position: absolute;
+            background-color: rgba($color: #000000, $alpha: 0.8);
+            content: "";
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 0;
+            cursor: pointer;
+        }
+        &:hover {
+            
+            .box-opacity {
+                opacity: 1;
+            }
+        }
+        
+    }
+}
+
+#video {
+    padding: 50px 0;
+    .box-video {
+        @include flex(flex, center, center, row);
+        width: 100%;
+        height: 100%;
+        video {
+            width: 100%;
+            height: 500px;
+        }
+    }
+}
+
+.box-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 30px 0;
+    .icon {
+        margin: 30px auto;
+    }
+    .content {
+        width: 100%;
+        h6 {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+#slider {
+    @include flex(flex, center, center, row);
+    height: 50vh;
+    .slick {
+        .slick-item {
+            .content {
+                text-align: center;
+                color: $color-white;
+                p {
+                    font-size: 30px;
+                }
+            }
+        }
+        .slick-dots {
+            li.slick-active {
+                button {
+                    &::before {
+                        color: $color-white !important;
+                        font-size: 8px;
+                    }
+                }
+            }
+            li button {
+                color: $color-white !important;
                 &::before {
-                    position: absolute;
-                    background-color: rgba($color: #000000, $alpha: 1);
-                    content: "";
-                    top: 0;
-                    left: 0;
-                    z-index: 1;
-                    width: 300px;
-                    height: 337px;
+                    color: $color-white !important;
+                }
+                &:hover {
+                    color: $color-white !important;
                 }
             }
         }
     }
+}
+
+
+#clients {
+    @include flex(flex, center, center, row);
+    height: 20vh;
 }
